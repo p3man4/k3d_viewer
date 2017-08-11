@@ -19,7 +19,7 @@ import cv2
 import numpy as np
 
 # change below to your DATA_PATH and DP_ROOT
-DATA_PATH='/home/junwon/smt-data/Train_All/'
+DATA_PATH='/home/junwon/smt-data/Train_kyboard/'
 DP_ROOT='/home/junwon/smt-project/SMT/detect_part/'
 
 
@@ -47,7 +47,7 @@ def info_view(request):
     img_bgr_size=None
     img_gray_size=None
     img_3d_size=None
-
+    compid=None
     print "<<info_view>>"
     if 'fileNm' in request.GET:
         fileNm = request.GET['fileNm']
@@ -78,7 +78,9 @@ def info_view(request):
 
         img_3d_size= img3d.shape
 
-    return render(request, 'k3d_viewer/info_view.html',{'q':q,'fileNm':fileNm,'k3dfile':k3dfile,'img_bgr_size':img_bgr_size,'img_gray_size':img_gray_size,'img_3d_size':img_3d_size})
+        compid= k3dfile['component_id']
+
+    return render(request, 'k3d_viewer/info_view.html',{'q':q,'fileNm':fileNm,'k3dfile':k3dfile,'img_bgr_size':img_bgr_size,'img_gray_size':img_gray_size,'img_3d_size':img_3d_size,'compid':compid})
 
 def search_list(request):
     q=None

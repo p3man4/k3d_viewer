@@ -13,9 +13,13 @@
     </head>
     <body>
         total:{{ file_list | length }}
+        <ol>
         {% for fileNm in file_list %}
+        
         <li><a href="#" onclick="javascript:LoadInfo('{{fileNm}}','{{q}}')">{{fileNm}}</li>
+        
         {% endfor %}
+        </ol>
     </body>
     <p id="demo"></p>
 </html>
