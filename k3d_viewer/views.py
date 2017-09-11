@@ -19,8 +19,8 @@ import cv2
 import numpy as np
 
 # change below to your DATA_PATH and DP_ROOT
-DATA_PATH='/home/junwon/smt-data/Train_kyboard/'
-DP_ROOT='/home/junwon/smt-project/SMT/detect_part/'
+DATA_PATH='/home/junwon/smt-data/Train_0818/'
+DP_ROOT='/home/junwon/smt-project/SMT-newtest/detect_part/'
 
 
 menu={}
